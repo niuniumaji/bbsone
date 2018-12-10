@@ -37,7 +37,7 @@
                         <select class="form-control" name="category_id" required>
                             <option value="" hidden disabled selected>请选择分类</option>
                             @foreach ($categories as $value)
-                                <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                <option value="{{ $value->id }}" {{ $topic->category_id == $value->id ? 'selected' : '' }}>{{ $value->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -54,7 +54,7 @@
         </div>
     </div>
 </div>
-<!-- 
+
 @endsection
 @section('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
@@ -82,4 +82,4 @@
     });
     </script>
 
-@stop -->
+@stop
